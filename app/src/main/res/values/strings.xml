@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ChattingAndroidApp</string>
+    <string name="login">Welcome Back</string>
+    <string name="sign_in_to_your_account">Sign in to your account</string>
+    <string name="type_your_phone_number">Type your phone number</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="phone_number">Phone Number:</string>
+    <string name="password">Password:</string>
+    <string name="create_a_free_account">Create a free account</string>
+    <string name="confirm_password">Confirm Password:</string>
+    <string name="hello">Hello!</string>
+</resources>
