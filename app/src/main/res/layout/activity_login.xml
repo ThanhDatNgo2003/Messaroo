@@ -54,22 +54,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:text="@string/phone_number"
+                    android:text="@string/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
+
                 <EditText
-                    android:id="@+id/loginPhoneNum"
-                    android:padding="10dp"
-                    android:ems="1"
-                    android:inputType="phone"
-                    android:textSize="18sp"
-                    android:textStyle="bold|normal"
-                    android:textColor="@color/grey"
-                    android:background="@drawable/background_shape"
+                    android:id="@+id/loginEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/background_shape"
+                    android:ems="1"
                     android:importantForAutofill="no"
-                    tools:ignore="LabelFor" />
+                    android:inputType="textEmailAddress"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textColor="@color/grey"
+                    android:textSize="18sp"
+                    android:textStyle="bold|normal"
+                    tools:ignore="LabelFor,SpeakableTextPresentCheck" />
                 <TextView
                     android:text="@string/password"
                     android:layout_marginTop="18dp"
@@ -85,33 +87,34 @@
                     android:fontFamily="@font/red_hat_display_bold"
                     android:importantForAutofill="no"
                     android:inputType="textPassword"
+                    android:minHeight="48dp"
                     android:padding="10dp"
                     android:textColor="@color/grey"
                     android:textSize="18sp"
                     android:textStyle="bold|normal"
-                    tools:ignore="LabelFor" />
+                    tools:ignore="LabelFor,SpeakableTextPresentCheck" />
                 <LinearLayout
                     android:orientation="horizontal"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
-                        android:text="Don't have an account?"
+                        android:text="@string/don_t_have_an_account"
                         android:gravity="center"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:ignore="HardcodedText" />
+                        android:layout_height="wrap_content"/>
+
                     <TextView
                         android:id="@+id/signUpView"
-                        android:layout_marginStart="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sign up"
-                        android:textColor="@color/primary"
+                        android:layout_marginStart="10dp"
                         android:clickable="true"
+                        android:focusable="true"
                         android:onClick="onSignUpClicked"
-                        tools:ignore="HardcodedText"
-                        android:focusable="true" />
+                        android:text="@string/sign_up"
+                        android:textColor="@color/primary"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
                 <Button
                     android:id="@+id/login"

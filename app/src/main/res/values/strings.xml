@@ -10,4 +10,14 @@
     <string name="create_a_free_account">Create a free account</string>
     <string name="confirm_password">Confirm Password:</string>
     <string name="hello">Hello!</string>
+    <string name="email">Email:</string>
+    <string name="log_in">Log in</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="profile_information">Profile Information</string>
+    <string name="please_set_your_name_and_an_optional_avatar_image">Please set your name and an optional Avatar Image</string>
+    <string name="type_your_name">Type your name</string>
+    <string name="setUpProfile">Setup Profile</string>
 </resources>
