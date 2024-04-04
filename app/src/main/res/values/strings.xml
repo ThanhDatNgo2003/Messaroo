@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">ChattingAndroidApp</string>
     <string name="login">Welcome Back</string>
     <string name="sign_in_to_your_account">Sign in to your account</string>
@@ -20,4 +20,15 @@
     <string name="please_set_your_name_and_an_optional_avatar_image">Please set your name and an optional Avatar Image</string>
     <string name="type_your_name">Type your name</string>
     <string name="setUpProfile">Setup Profile</string>
+    <string name="thanh_dat_ngo">Thanh Dat Ngo</string>
+    <string name="chat">Chat</string>
+    <string name="friend">Friend</string>
+    <string name="hi_how_are_you_today">Hi! How are you today!!</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="harley_nguyen">Harley Nguyen</string>
+    <string name="online">Online</string>
+    <string name="type_a_message" tools:ignore="TypographyEllipsis">Type a message...</string>
+    <string name="remove_for_everyone">Remove for everyone</string>
+    <string name="remove_for_you">Remove for you</string>
+    <string name="cancel">Cancel</string>
 </resources>

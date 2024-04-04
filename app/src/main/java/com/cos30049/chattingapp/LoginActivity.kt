@@ -1,47 +1,6 @@
 package com.cos30049.chattingapp
 
-//import android.content.Intent
-//import androidx.appcompat.app.AppCompatActivity
-//import android.os.Bundle
-//import android.view.View
-//import androidx.databinding.DataBindingUtil
-//import androidx.databinding.ViewDataBinding
-//import com.cos30049.chattingapp.databinding.ActivityLoginBinding
-//import com.google.firebase.auth.FirebaseAuth
-//
-//class LoginActivity : AppCompatActivity() {
-//
-//    var binding: ActivityLoginBinding? = null
-//
-//    private var auth: FirebaseAuth? = null
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        val binding = ActivityLoginBinding.inflate(layoutInflater)
-//        setContentView(binding.root)
-//
-//        auth = FirebaseAuth.getInstance()
-//        if (auth!!.currentUser != null){
-//            val intent = Intent(this@LoginActivity,MainActivity::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
-//        supportActionBar!!.hide()
-//        binding.loginPhoneNum.requestFocus()
-//        binding.loginPassword.requestFocus()
-//        binding.login.setOnClickListener {
-//            val intent = Intent(this@LoginActivity,MainActivity::class.java)
-//            intent.putExtra("loginPhoneNum", binding.loginPhoneNum.text.toString())
-//            startActivity(intent)
-//        }
-//    }
-//
-//    fun onSignUpClicked(view: View) {}
-//    fun onLogInClicked(view: View) {}
-//}
-
-
-// LoginActivity.kt
-
+import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import android.content.ContentValues.TAG
 import android.content.Intent
@@ -92,7 +51,6 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
 
-        // Set focus on input fields (optional)
         loginEmail.requestFocus()
         loginPassword.requestFocus()
 
@@ -125,15 +83,18 @@ class LoginActivity : AppCompatActivity() {
             // Perform login logic
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
-                    // Hide the progress indicator and enable the register button
+                    // Hide the progress indicator
+                    progressDialog.dismiss()
+                    // Re-enable the login button
                     login.isEnabled = true
+
                     if (task.isSuccessful) {
+                        // Handle successful login
                         val currentUser = auth.currentUser
                         val uid = currentUser!!.uid
                         val usersRef = database.reference.child("users").child(uid)
                         usersRef.addListenerForSingleValueEvent(object : ValueEventListener {
                             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                                progressDialog.dismiss()
                                 if (dataSnapshot.exists() && dataSnapshot.child("name").value != null) {
                                     // Username exists, navigate to MainActivity
                                     startActivity(Intent(this@LoginActivity, MainActivity::class.java))
@@ -143,35 +104,31 @@ class LoginActivity : AppCompatActivity() {
                                     startActivity(intent)
                                     finish()
                                 }
-
                             }
+
                             override fun onCancelled(databaseError: DatabaseError) {
-                            // Handle database error
+                                // Handle database error
                             }
                         })
                     } else {
-                        // Handle the possible exceptions
-                        when (val exception = task.exception) {
-
-                            is FirebaseNetworkException -> {
-                                Toast.makeText(
-                                    this@LoginActivity,
-                                    "No network connection",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                            }
-
-                            else -> {
-                                Toast.makeText(
-                                    this@LoginActivity,
-                                    "Login failed: ${exception?.message}",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                            }
-                        }
+                        // Handle the failed login attempt
+                        Toast.makeText(
+                            this@LoginActivity,
+                            "Login failed: ${task.exception?.message}",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
+
         }
+    }
+
+
+    @Deprecated("Deprecated in Java", ReplaceWith("finishAffinity()"))
+    @SuppressLint("MissingSuperCall")
+    override fun onBackPressed() {
+        // If the user is not signed in, prevent navigation back to MainActivity
+        finishAffinity()
     }
 
 
@@ -181,28 +138,6 @@ class LoginActivity : AppCompatActivity() {
         finish()
     }
 
-//    private fun signIn(email: String, password: String) {
-//        // [START sign_in_with_email]
-//        auth.signInWithEmailAndPassword(email, password)
-//            .addOnCompleteListener(this) { task ->
-//                if (task.isSuccessful) {
-//                    // Sign in success, update UI with the signed-in user's information
-//                    Log.d(TAG, "signInWithEmail:success")
-//                    val user = auth.currentUser
-//                    updateUI(user)
-//                } else {
-//                    // If sign in fails, display a message to the user.
-//                    Log.w(TAG, "signInWithEmail:failure", task.exception)
-//                    Toast.makeText(
-//                        baseContext,
-//                        "Authentication failed.",
-//                        Toast.LENGTH_SHORT,
-//                    ).show()
-//                    updateUI(null)
-//                }
-//            }
-//        // [END sign_in_with_email]
-//    }
 
     private fun updateUI(user: FirebaseUser?) {
         TODO("Not yet implemented")

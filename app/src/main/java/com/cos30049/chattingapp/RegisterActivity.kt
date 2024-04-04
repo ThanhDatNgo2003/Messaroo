@@ -20,14 +20,6 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.auth
 import org.mindrot.jbcrypt.BCrypt
 
-//
-//class RegisterActivity : AppCompatActivity() {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_register)
-//    }
-//}
-
 
 
 class RegisterActivity : AppCompatActivity() {
