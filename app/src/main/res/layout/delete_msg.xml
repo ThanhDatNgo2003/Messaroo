@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/rm_every"
+        android:text="@string/remove_for_everyone"
+        android:textAlignment="textEnd"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold|normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/rm_only"
+        android:text="@string/remove_for_you"
+        android:textAlignment="textEnd"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold|normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/rm_cancel"
+        android:text="@string/cancel"
+        android:textAlignment="textEnd"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold|normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

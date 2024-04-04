@@ -1,0 +1,11 @@
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="@string/chat"
+        android:id="@+id/chat_navigation"
+        android:icon="@drawable/chat" />
+    <item
+        android:title="@string/friend"
+        android:id="@+id/add_friend_navigation"
+        android:icon="@drawable/friend" />
+</menu>
